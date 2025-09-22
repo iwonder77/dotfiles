@@ -108,7 +108,7 @@ return {
       },
     }
     local formatters = {
-      'stylua',
+      -- 'stylua',
       -- 'prettierd',
       -- 'prettier',
       -- 'isort',
@@ -150,6 +150,7 @@ return {
         end,
       },
     }
+    -- I found for some reason that we have to manually setup the arduino-language server with the override configuration tables we defined for it above
     print("[LSP CONFIG] Loading custom arduino-language-server...")
 
     require('lspconfig').arduino_language_server.setup(servers["arduino_language_server"])
