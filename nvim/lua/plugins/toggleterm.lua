@@ -3,9 +3,9 @@ return {
   version = "*",
   config = function()
     require('toggleterm').setup({
-      size = 15,
+      size = 85,
       open_mapping = [[<c-\>]],
-      direction = "horizontal",
+      direction = "vertical",
     })
 
     -- Function for setting terminal keymaps
