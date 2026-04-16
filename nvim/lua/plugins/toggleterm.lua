@@ -3,7 +3,7 @@ return {
   version = "*",
   config = function()
     require('toggleterm').setup({
-      size = 100,
+      size = 90,
       open_mapping = [[<c-\>]],
       direction = "vertical",
     })
