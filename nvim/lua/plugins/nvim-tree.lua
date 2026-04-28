@@ -38,6 +38,6 @@ return {
 				show_on_open_dirs = false,
 			},
 		})
-		vim.keymap.set("n", "<leader>fe", ":NvimTreeOpen <CR>", { desc = "Show neo-tree file explorer " })
+		vim.keymap.set("n", "<leader>fe", ":NvimTreeToggle <CR>", { desc = "Toggle file explorer" })
 	end,
 }
