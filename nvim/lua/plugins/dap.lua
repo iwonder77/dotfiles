@@ -32,7 +32,13 @@ return {
 						"<cmd> DapToggleBreakpoint <CR>",
 						{ desc = "add a [d]ebugger [b]reakpoint" }
 					)
-					vim.keymap.set("n", "<leader>dr", "<cmd> DapContinue <CR>", { desc = "[d]ebugger [r]un" })
+					vim.keymap.set(
+						"n",
+						"<leader>dr",
+						"<cmd> DapContinue <CR>",
+						{ desc = "[d]ebugger [r]un (continue)" }
+					)
+					-- TODO: add step over, step into, step out, toggle UI, and conditional breakpoint actions for a usable debug session
 				end,
 			},
 		},
