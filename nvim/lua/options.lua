@@ -7,7 +7,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -17,26 +17,26 @@ vim.opt.showmode = false
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
+	vim.opt.clipboard = "unnamedplus"
 end)
 
 -- The following allow us to yank not only within Neovim but now anything we yank is automatically added to OS clipboard (FOR WSL ONLY)
 -- Similarly with pasting, anything copied on OS clipboard can be pasted on Neovim with "p"
 --  there was a lot of trial and error with this (using ChatGPT and Neovim docs) so I'm still not completely sure how it works
-local is_wsl = vim.fn.has('wsl') == 1
+local is_wsl = vim.fn.has("wsl") == 1
 if is_wsl then
-  vim.g.clipboard = {
-    name = 'WslClipboard',
-    copy = {
-      ['+'] = 'clip.exe',
-      ['*'] = 'clip.exe',
-    },
-    paste = {
-      ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-      ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-    },
-    cache_enabled = 0,
-  }
+	vim.g.clipboard = {
+		name = "WslClipboard",
+		copy = {
+			["+"] = "clip.exe",
+			["*"] = "clip.exe",
+		},
+		paste = {
+			["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+			["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+		},
+		cache_enabled = 0,
+	}
 end
 
 -- Enable break indent
@@ -50,7 +50,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -75,7 +75,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
@@ -84,9 +84,9 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 vim.filetype.add({
-  extension = {
-    mdx = "markdown"
-  }
+	extension = {
+		mdx = "markdown",
+	},
 })
 
 -- vim: ts=2 sts=2 sw=2 et
