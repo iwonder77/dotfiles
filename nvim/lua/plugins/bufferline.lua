@@ -19,9 +19,9 @@ return {
 			":Bdelete<CR>",
 			{ desc = "Delete current buffer without shifting window layout" }
 		)
-		vim.keymap.set("n", "b]", ":BufferLineMoveNext<CR>", { desc = "Reorder current buffer right" })
-		vim.keymap.set("n", "b[", ":BufferLineMovePrev<CR>", { desc = "Reorder current buffer left" })
-		vim.keymap.set("n", "bp", ":BufferLineTogglePin<CR>", { desc = "Pin current buffer" })
+		vim.keymap.set("n", "<leader>b]", ":BufferLineMoveNext<CR>", { desc = "Reorder current buffer right" })
+		vim.keymap.set("n", "<leader>b[", ":BufferLineMovePrev<CR>", { desc = "Reorder current buffer left" })
+		vim.keymap.set("n", "<leader>bp", ":BufferLineTogglePin<CR>", { desc = "Pin current buffer" })
 
 		local bufferline = require("bufferline")
 		bufferline.setup({
