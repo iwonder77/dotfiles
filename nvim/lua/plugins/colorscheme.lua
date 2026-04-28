@@ -16,6 +16,7 @@ return {
 				colored_indent_levels = false,
 			},
 			treesitter = true,
+			treesitter_context = true,
 			mason = true,
 			telescope = {
 				enabled = true,
