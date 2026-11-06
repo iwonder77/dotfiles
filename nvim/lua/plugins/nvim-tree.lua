@@ -38,6 +38,6 @@ return {
 				show_on_open_dirs = false,
 			},
 		})
-		vim.keymap.set("n", "<leader>fe", ":NvimTreeToggle <CR>", { desc = "Toggle file explorer" })
+		vim.keymap.set("n", "<leader>fe", ":NvimTreeOpen <CR>", { desc = "Go-to nvim-tree [f]ile [e]xplorer" })
 	end,
 }
