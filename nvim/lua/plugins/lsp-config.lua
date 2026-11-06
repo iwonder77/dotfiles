@@ -78,7 +78,18 @@ return {
 			-- NOT install or enable the server — we still need it here for that to happen.
 			lua_ls = {},
 			-- CPP:
-			clangd = {},
+			-- clangd is a separate program from the compiler, so it doesn't know the ARM
+			-- compiler's built-in header folders (newlib's stdio.h, assert.h, ...).
+			-- --query-driver lets clangd run the compilers matching these paths and ask them.
+			clangd = {
+				cmd = {
+					"clangd",
+					"--query-driver=/opt/homebrew/bin/arm-none-eabi-*,/Applications/ArmGNUToolchain/*/arm-none-eabi/bin/arm-none-eabi-*",
+					-- don't auto-add #include lines when accepting completions
+					-- (it tends to pick internal SDK headers)
+					"--header-insertion=never",
+				},
+			},
 			cmake = {},
 			-- Python:
 			jedi_language_server = {},
